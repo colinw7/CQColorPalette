@@ -4,6 +4,8 @@
 #include <QString>
 #include <QColor>
 
+#include <vector>
+#include <map>
 #include <cassert>
 
 #define ColorPaletteInst ColorPalette::instance()
@@ -60,6 +62,8 @@ class ColorPalette {
   static ColorPalette *instance();
 
   static QColor textColor(const QColor &c);
+
+  bool hasColorSet(const QString &name) const;
 
   const ColorPalette::ColorSet &getColorSet(const QString &name) const;
 

@@ -27,14 +27,25 @@ ColorPalette()
   init();
 }
 
+bool
+ColorPalette::
+hasColorSet(const QString &name) const
+{
+  QString lname = name.toLower();
+
+  return (colorSets_.find(lname) != colorSets_.end());
+}
+
 ColorPalette::ColorSet &
 ColorPalette::
 createColorSet(const QString &name)
 {
-  ColorSets::iterator p = colorSets_.find(name);
+  QString lname = name.toLower();
+
+  ColorSets::iterator p = colorSets_.find(lname);
 
   if (p == colorSets_.end()) {
-    p = colorSets_.insert(p, ColorSets::value_type(name, ColorSet(name)));
+    p = colorSets_.insert(p, ColorSets::value_type(lname, ColorSet(name)));
 
     colorSetNames_.push_back(name);
   }
@@ -46,7 +57,9 @@ const ColorPalette::ColorSet &
 ColorPalette::
 getColorSet(const QString &name) const
 {
-  ColorSets::const_iterator p = colorSets_.find(name);
+  QString lname = name.toLower();
+
+  ColorSets::const_iterator p = colorSets_.find(lname);
   assert(p != colorSets_.end());
 
   return (*p).second;

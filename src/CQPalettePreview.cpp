@@ -18,35 +18,35 @@ CQPalettePreview() :
   QVBoxLayout *layout = new QVBoxLayout(this);
   layout->setMargin(2); layout->setSpacing(2);
 
-  QLabel *settings = CQStyleWidgetMgrInst->addT(new QLabel("Settings"), "h1");
+  QLabel *settings = CQStyleWidgetMgrInst->add(new QLabel("Settings"), "h1");
 
   layout->addWidget(settings);
 
-  QLabel *basics = CQStyleWidgetMgrInst->addT(new QLabel("Basics"), "h2");
+  QLabel *basics = CQStyleWidgetMgrInst->add(new QLabel("Basics"), "h2");
 
   layout->addWidget(basics);
 
-  QGroupBox *group = CQStyleWidgetMgrInst->addT(new QGroupBox("Group"), "h3");
+  QGroupBox *group = CQStyleWidgetMgrInst->add(new QGroupBox("Group"), "h3");
 
   QGridLayout *grid1 = new QGridLayout;
 
-  grid1->addWidget(CQStyleWidgetMgrInst->addT(new QLabel("Label"), "p"), 0, 0);
-  grid1->addWidget(CQStyleWidgetMgrInst->addT(new QLabel("Text" ), "control" ), 0, 1);
+  grid1->addWidget(CQStyleWidgetMgrInst->add(new QLabel("Label"), "p"), 0, 0);
+  grid1->addWidget(CQStyleWidgetMgrInst->add(new QLabel("Text" ), "control" ), 0, 1);
 
-  grid1->addWidget(CQStyleWidgetMgrInst->addT(new QLabel     ("Button"), "p"), 1, 0);
-  grid1->addWidget(CQStyleWidgetMgrInst->addT(new QPushButton("Press" ), "control" ), 1, 1);
+  grid1->addWidget(CQStyleWidgetMgrInst->add(new QLabel     ("Button"), "p"), 1, 0);
+  grid1->addWidget(CQStyleWidgetMgrInst->add(new QPushButton("Press" ), "control" ), 1, 1);
 
-  grid1->addWidget(CQStyleWidgetMgrInst->addT(new QLabel ("Slider"      ), "p"), 2, 0);
-  grid1->addWidget(CQStyleWidgetMgrInst->addT(new QSlider(Qt::Horizontal), "control" ), 2, 1);
+  grid1->addWidget(CQStyleWidgetMgrInst->add(new QLabel ("Slider"      ), "p"), 2, 0);
+  grid1->addWidget(CQStyleWidgetMgrInst->add(new QSlider(Qt::Horizontal), "control" ), 2, 1);
 
-  grid1->addWidget(CQStyleWidgetMgrInst->addT(new QLabel   ("Line Edit"), "p"), 3, 0);
-  grid1->addWidget(CQStyleWidgetMgrInst->addT(new QLineEdit(           ), "control" ), 3, 1);
+  grid1->addWidget(CQStyleWidgetMgrInst->add(new QLabel   ("Line Edit"), "p"), 3, 0);
+  grid1->addWidget(CQStyleWidgetMgrInst->add(new QLineEdit(           ), "control" ), 3, 1);
 
-  grid1->addWidget(CQStyleWidgetMgrInst->addT(new QLabel   ("Check"), "p"), 4, 0);
-  grid1->addWidget(CQStyleWidgetMgrInst->addT(new QCheckBox("Yes"  ), "control" ), 4, 1);
+  grid1->addWidget(CQStyleWidgetMgrInst->add(new QLabel   ("Check"), "p"), 4, 0);
+  grid1->addWidget(CQStyleWidgetMgrInst->add(new QCheckBox("Yes"  ), "control" ), 4, 1);
 
-  grid1->addWidget(CQStyleWidgetMgrInst->addT(new QLabel      ("Radio"), "p"), 5, 0);
-  grid1->addWidget(CQStyleWidgetMgrInst->addT(new QRadioButton("Yes"  ), "control" ), 5, 1);
+  grid1->addWidget(CQStyleWidgetMgrInst->add(new QLabel      ("Radio"), "p"), 5, 0);
+  grid1->addWidget(CQStyleWidgetMgrInst->add(new QRadioButton("Yes"  ), "control" ), 5, 1);
 
   grid1->setColumnStretch(2, 1);
 
