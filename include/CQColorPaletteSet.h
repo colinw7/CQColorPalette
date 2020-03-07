@@ -54,6 +54,8 @@ class CQColorSetButton : public QPushButton {
  public:
   CQColorSetButton(const Type &type, const QString &colorSet);
 
+  const Type &type() const { return type_; }
+
   const QString &colorSet() const { return colorSet_; }
   void setColorSet(const QString &colorSet);
 
