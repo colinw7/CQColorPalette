@@ -15,12 +15,14 @@ class ColorPalette {
   struct ColorData {
     QString id;
     QColor  color;
-    bool    accent;
+    bool    accent { false };
 
     ColorData(const QString &id1=QString(), const QColor &color1=QColor(), bool accent1=false) :
      id(id1), color(color1), accent(accent1) {
     }
   };
+
+  //---
 
   class ColorSet {
    public:
@@ -57,6 +59,8 @@ class ColorPalette {
     QString name_;
     Colors  colors_;
   };
+
+  //---
 
  public:
   static ColorPalette *instance();

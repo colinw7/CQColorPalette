@@ -212,6 +212,8 @@ class CQColorTableItem : public QTableWidgetItem {
    table_(table), name_(name), color_(color) {
   }
 
+  CQColorTable *table() const { return table_; }
+
   const QString &name () const { return name_ ; }
   const QColor  &color() const { return color_; }
 
@@ -401,6 +403,8 @@ class CQColorListItem : public QListWidgetItem {
    list_(list), name_(name), color_(color) {
   }
 
+  CQColorList *list() const { return list_; }
+
   const QString &name () const { return name_ ; }
   const QColor  &color() const { return color_; }
 
@@ -415,6 +419,8 @@ class CQColorListDelegate : public QItemDelegate {
   CQColorListDelegate(CQColorList *list) :
    list_(list) {
   }
+
+  CQColorList *list() const { return list_; }
 
   void paint(QPainter *painter, const QStyleOptionViewItem &option,
              const QModelIndex &index) const {
@@ -538,6 +544,8 @@ class CQColorItemListItem : public QListWidgetItem {
    list_(list), type_(type), name_(name), color_(color) {
     setSelectable(type == Normal);
   }
+
+  CQColorItemList *list() const { return list_; }
 
   Type type() const { return type_; }
 

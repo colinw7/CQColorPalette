@@ -84,7 +84,7 @@ class CQColorTable : public QTableWidget {
   void addItems();
   void addItem(int row, int col, const QString &name, const QColor &c);
 
-  void resizeEvent(QResizeEvent *);
+  void resizeEvent(QResizeEvent *) override;
 
  signals:
   void colorSelected(const QString &);

@@ -62,7 +62,7 @@ class CQColorSetButton : public QPushButton {
  private:
   void updateText();
 
-  void paintEvent(QPaintEvent *);
+  void paintEvent(QPaintEvent *) override;
 
  private:
   Type    type_;
