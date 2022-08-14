@@ -176,7 +176,7 @@ updateList()
       const QString &id = ids[i];
 
       if (id == "500")
-        row = i;
+        row = int(i);
 
       if (! is_a && colorSet.isAccent(id)) {
         itemList_->addSeparator();
@@ -309,8 +309,8 @@ setColorSet(const QString &name)
   ColorPaletteInst->getColorSetNames(names);
 
   for (uint i = 0; i < ColorPaletteInst->numColorSets(); ++i) {
-    int r = i / ncols_;
-    int c = i % ncols_;
+    int r = int(i) / ncols_;
+    int c = int(i) % ncols_;
 
     if (names[i] == name)
       setCurrentCell(r, c);
@@ -328,8 +328,8 @@ addItems()
   ColorPaletteInst->getColorSetNames(names);
 
   for (uint i = 0; i < ColorPaletteInst->numColorSets(); ++i) {
-    int r = i / ncols_;
-    int c = i % ncols_;
+    int r = int(i) / ncols_;
+    int c = int(i) % ncols_;
 
     const QColor &color = ColorPaletteInst->getColorSetBase(names[i]);
 
@@ -366,7 +366,7 @@ resizeEvent(QResizeEvent *)
   int ncols = std::max(w/cellSizeHint().width(), 1);
 
   ncols_ = ncols;
-  nrows_ = (ColorPaletteInst->numColorSets() + ncols_ - 1)/ncols_;
+  nrows_ = (int(ColorPaletteInst->numColorSets()) + ncols_ - 1)/ncols_;
 
   setColumnCount(ncols_);
   setRowCount   (nrows_);
@@ -478,7 +478,7 @@ setColorSet(const QString &name)
 
   for (uint i = 0; i < ColorPaletteInst->numColorSets(); ++i) {
     if (names[i] == name)
-      setCurrentRow(i);
+      setCurrentRow(int(i));
   }
 }
 
@@ -502,7 +502,7 @@ addItems()
     addItem(names[i], color);
 
     if (names[i] == pal_->colorSet())
-      setCurrentRow(i);
+      setCurrentRow(int(i));
 
     w = std::max(w, fm.width(names[i]));
   }

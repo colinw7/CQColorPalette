@@ -73,7 +73,7 @@ class ColorPalette {
 
   const QColor &getColor(const QString &name, const QString &id) const;
 
-  uint numColorSets() const { return colorSets_.size(); }
+  uint numColorSets() const { return uint(colorSets_.size()); }
 
   void getColorSetNames(std::vector<QString> &names) const;
 

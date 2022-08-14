@@ -94,8 +94,8 @@ class CQColorTable : public QTableWidget {
 
  private:
   CQColorPalette *pal_;
-  int             nrows_;
-  int             ncols_;
+  int             nrows_ { 0 };
+  int             ncols_ { 0 };
 };
 
 //------
@@ -119,8 +119,10 @@ class CQColorList : public QListWidget {
   void itemSlot(QListWidgetItem *, QListWidgetItem *);
 
  private:
-  CQColorPalette *pal_;
+  CQColorPalette *pal_ { nullptr };
 };
+
+//---
 
 class CQColorItemList : public QListWidget {
   Q_OBJECT
@@ -143,7 +145,7 @@ class CQColorItemList : public QListWidget {
   void itemSlot(QListWidgetItem *, QListWidgetItem *);
 
  private:
-  CQColorPalette *pal_;
+  CQColorPalette *pal_ { nullptr };
 };
 
 //------
@@ -183,7 +185,7 @@ class CQColorLabel : public QLabel {
   void colorChanged(const QString &name, const QString &id, const QColor &c);
 
  private:
-  Type type_;
+  Type type_ { FgType };
 };
 
 #endif
