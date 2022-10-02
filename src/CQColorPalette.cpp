@@ -267,7 +267,7 @@ class CQColorTableDelegate : public QItemDelegate {
                       item->color().name());
 
     if (option.state & QStyle::State_Selected)
-      painter->drawRect(option.rect.adjusted(0,0,-1,-1));
+      painter->drawRect(option.rect.adjusted(0, 0, -1, -1));
   }
 
   QSize sizeHint(const QStyleOptionViewItem &, const QModelIndex &) const {
@@ -380,8 +380,8 @@ cellSizeHint() const
 {
   QFontMetrics fm(font());
 
-  //int w = fm.width(item->name());
-  int w = fm.width("500#888888");
+  //int w = fm.horizontalAdvance(item->name());
+  int w = fm.horizontalAdvance("500#888888");
 
   return QSize(w + 64, 4*fm.height() + 8);
 }
@@ -439,7 +439,7 @@ class CQColorListDelegate : public QItemDelegate {
                       item->name());
 
     if (option.state & QStyle::State_Selected)
-      painter->drawRect(option.rect.adjusted(0,0,-1,-1));
+      painter->drawRect(option.rect.adjusted(0, 0, -1, -1));
   }
 
   QSize sizeHint(const QStyleOptionViewItem &, const QModelIndex &index) const {
@@ -447,7 +447,7 @@ class CQColorListDelegate : public QItemDelegate {
 
     QFontMetrics fm(list_->font());
 
-    return QSize(fm.width(item->name()) + 8, fm.height() + 8);
+    return QSize(fm.horizontalAdvance(item->name()) + 8, fm.height() + 8);
   }
 
  private:
@@ -504,7 +504,7 @@ addItems()
     if (names[i] == pal_->colorSet())
       setCurrentRow(int(i));
 
-    w = std::max(w, fm.width(names[i]));
+    w = std::max(w, fm.horizontalAdvance(names[i]));
   }
 
   setFixedWidth(w + 64);
@@ -581,7 +581,7 @@ class CQColorItemListDelegate : public QItemDelegate {
     CQColorItemListItem *item = static_cast<CQColorItemListItem *>(list_->item(index.row()));
 
     if (item->type() == CQColorItemListItem::Separator) {
-      painter->fillRect(option.rect, QColor(255,255,255));
+      painter->fillRect(option.rect, QColor(255, 255, 255));
       return;
     }
 
@@ -591,7 +591,7 @@ class CQColorItemListDelegate : public QItemDelegate {
       painter->setPen(ColorPalette::textColor(item->color()));
     }
     else
-      painter->setPen(QColor(0,0,0));
+      painter->setPen(QColor(0, 0, 0));
 
     int border = 4;
 
@@ -607,7 +607,7 @@ class CQColorItemListDelegate : public QItemDelegate {
                         item->color().name());
 
     if (option.state & QStyle::State_Selected)
-      painter->drawRect(option.rect.adjusted(0,0,-1,-1));
+      painter->drawRect(option.rect.adjusted(0, 0, -1, -1));
   }
 
   QSize sizeHint(const QStyleOptionViewItem &, const QModelIndex &index) const {
@@ -618,7 +618,7 @@ class CQColorItemListDelegate : public QItemDelegate {
     if (item->type() == CQColorItemListItem::Separator)
       return QSize(8, 8);
     else
-      return QSize(fm.width(item->name()) + 8, fm.height() + 8);
+      return QSize(fm.horizontalAdvance(item->name()) + 8, fm.height() + 8);
   }
 
  private:
@@ -726,7 +726,7 @@ colorChanged(const QString &name, const QString &id, const QColor &c)
     pal.setColor(foregroundRole(), ColorPalette::textColor(c));
   }
   else {
-    pal.setColor(backgroundRole(), QColor(0,0,0,0));
+    pal.setColor(backgroundRole(), QColor(0, 0, 0, 0));
     pal.setColor(foregroundRole(), c);
   }
 
@@ -738,5 +738,5 @@ colorChanged(const QString &name, const QString &id, const QColor &c)
 
   QFontMetrics fm(font());
 
-  setFixedWidth(fm.width(str) + 32);
+  setFixedWidth(fm.horizontalAdvance(str) + 32);
 }

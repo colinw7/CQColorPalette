@@ -18,7 +18,7 @@ textColor(const QColor &c)
 {
   int gray = qGray(c.red(), c.green(), c.blue());
 
-  return (gray <= 127 ? QColor(255,255,255) : QColor(0,0,0));
+  return (gray <= 127 ? QColor(255, 255, 255) : QColor(0, 0, 0));
 }
 
 ColorPalette::

@@ -54,7 +54,7 @@ class ColorPalette {
     }
 
    private:
-    typedef std::map<QString,ColorData> Colors;
+    typedef std::map<QString, ColorData> Colors;
 
     QString name_;
     Colors  colors_;
@@ -90,8 +90,8 @@ class ColorPalette {
   void addColor(ColorSet &colorSet, const QString &colorId, const QString &colorName);
 
  private:
-  typedef std::map<QString,ColorSet> ColorSets;
-  typedef std::vector<QString>       ColorSetNames;
+  typedef std::map<QString, ColorSet> ColorSets;
+  typedef std::vector<QString>        ColorSetNames;
 
   QString       name_;
   ColorSets     colorSets_;
