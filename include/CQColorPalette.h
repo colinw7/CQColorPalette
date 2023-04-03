@@ -52,7 +52,7 @@ class CQColorPalette : public QFrame {
   void updateList();
   void updateLabel();
 
- private slots:
+ private Q_SLOTS:
   void colorSelected(const QString &name);
   void colorItemSelected(const QString &name);
 
@@ -89,7 +89,7 @@ class CQColorTable : public QTableWidget {
  signals:
   void colorSelected(const QString &);
 
- private slots:
+ private Q_SLOTS:
   void itemSlot(QTableWidgetItem *, QTableWidgetItem *);
 
  private:
@@ -115,7 +115,7 @@ class CQColorList : public QListWidget {
  signals:
   void colorSelected(const QString &);
 
- private slots:
+ private Q_SLOTS:
   void itemSlot(QListWidgetItem *, QListWidgetItem *);
 
  private:
@@ -141,7 +141,7 @@ class CQColorItemList : public QListWidget {
  signals:
   void colorItemSelected(const QString &);
 
- private slots:
+ private Q_SLOTS:
   void itemSlot(QListWidgetItem *, QListWidgetItem *);
 
  private:
@@ -159,7 +159,7 @@ class CQColorButton : public QToolButton {
  signals:
   void buttonClicked(const QString &name);
 
- private slots:
+ private Q_SLOTS:
   void clickSlot();
 
  private:
@@ -181,7 +181,7 @@ class CQColorLabel : public QLabel {
  public:
   CQColorLabel(const Type &type=BgType);
 
- public slots:
+ public Q_SLOTS:
   void colorChanged(const QString &name, const QString &id, const QColor &c);
 
  private:

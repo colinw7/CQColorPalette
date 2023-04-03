@@ -9,7 +9,7 @@
 CQColorPaletteSet::
 CQColorPaletteSet(QWidget *parent) :
  QFrame(parent), primary_("Indigo"), secondary_("Pink"), text_("Grey"),
- primaryDialog_(0), secondaryDialog_(0), textDialog_(0)
+ primaryDialog_(nullptr), secondaryDialog_(nullptr), textDialog_(nullptr)
 {
   QGridLayout *layout = new QGridLayout(this);
 

@@ -12,7 +12,7 @@ class CQColorPaletteSet : public QFrame {
   Q_OBJECT
 
  public:
-  CQColorPaletteSet(QWidget *parent=0);
+  CQColorPaletteSet(QWidget *parent=nullptr);
 
   const QString &primary() const { return primary_; }
   const QString &secondary() const { return secondary_; }

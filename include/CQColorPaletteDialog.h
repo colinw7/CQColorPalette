@@ -8,7 +8,7 @@ class CQColorPaletteDialog : public QDialog {
   Q_OBJECT
 
  public:
-  CQColorPaletteDialog(QWidget *dialog=0);
+  CQColorPaletteDialog(QWidget *dialog=nullptr);
 
   void setStyle(const CQColorPalette::Style &style);
 

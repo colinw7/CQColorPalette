@@ -230,7 +230,7 @@ class CQColorTableDelegate : public QItemDelegate {
   }
 
   void paint(QPainter *painter, const QStyleOptionViewItem &option,
-             const QModelIndex &index) const {
+             const QModelIndex &index) const override {
     CQColorTableItem *item =
       static_cast<CQColorTableItem *>(table_->item(index.row(), index.column()));
     if (! item) return;
@@ -270,7 +270,7 @@ class CQColorTableDelegate : public QItemDelegate {
       painter->drawRect(option.rect.adjusted(0, 0, -1, -1));
   }
 
-  QSize sizeHint(const QStyleOptionViewItem &, const QModelIndex &) const {
+  QSize sizeHint(const QStyleOptionViewItem &, const QModelIndex &) const override {
     return table_->cellSize();
   }
 
@@ -297,7 +297,7 @@ CQColorTable(CQColorPalette *pal) :
   connect(this, SIGNAL(currentItemChanged(QTableWidgetItem *, QTableWidgetItem *)),
           this, SLOT(itemSlot(QTableWidgetItem *, QTableWidgetItem *)));
 
-  resizeEvent(0);
+  resizeEvent(nullptr);
 }
 
 void
@@ -423,7 +423,7 @@ class CQColorListDelegate : public QItemDelegate {
   CQColorList *list() const { return list_; }
 
   void paint(QPainter *painter, const QStyleOptionViewItem &option,
-             const QModelIndex &index) const {
+             const QModelIndex &index) const override {
     CQColorListItem *item = static_cast<CQColorListItem *>(list_->item(index.row()));
 
     painter->fillRect(option.rect, item->color());
@@ -442,7 +442,7 @@ class CQColorListDelegate : public QItemDelegate {
       painter->drawRect(option.rect.adjusted(0, 0, -1, -1));
   }
 
-  QSize sizeHint(const QStyleOptionViewItem &, const QModelIndex &index) const {
+  QSize sizeHint(const QStyleOptionViewItem &, const QModelIndex &index) const override {
     CQColorListItem *item = static_cast<CQColorListItem *>(list_->item(index.row()));
 
     QFontMetrics fm(list_->font());
@@ -577,7 +577,7 @@ class CQColorItemListDelegate : public QItemDelegate {
   }
 
   void paint(QPainter *painter, const QStyleOptionViewItem &option,
-             const QModelIndex &index) const {
+             const QModelIndex &index) const override {
     CQColorItemListItem *item = static_cast<CQColorItemListItem *>(list_->item(index.row()));
 
     if (item->type() == CQColorItemListItem::Separator) {
@@ -610,7 +610,7 @@ class CQColorItemListDelegate : public QItemDelegate {
       painter->drawRect(option.rect.adjusted(0, 0, -1, -1));
   }
 
-  QSize sizeHint(const QStyleOptionViewItem &, const QModelIndex &index) const {
+  QSize sizeHint(const QStyleOptionViewItem &, const QModelIndex &index) const override {
     CQColorItemListItem *item = static_cast<CQColorItemListItem *>(list_->item(index.row()));
 
     QFontMetrics fm(list_->font());
