@@ -24,7 +24,7 @@ class CQColorPaletteDialog : public QDialog {
   void cancelSlot();
 
  private:
-  CQColorPalette *pal_;
+  CQColorPalette *pal_ { nullptr };
 };
 
 #endif

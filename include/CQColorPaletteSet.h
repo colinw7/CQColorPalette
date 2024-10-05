@@ -31,17 +31,21 @@ class CQColorPaletteSet : public QFrame {
   void textColorSlot(const QString &setName, const QString &colorName);
 
  private:
-  CQPalettePreview     *preview_;
-  QString               primary_;
-  QString               secondary_;
-  QString               text_;
-  CQColorSetButton     *primaryButton_;
-  CQColorSetButton     *secondaryButton_;
-  CQColorSetButton     *textButton_;
-  CQColorPaletteDialog *primaryDialog_;
-  CQColorPaletteDialog *secondaryDialog_;
-  CQColorPaletteDialog *textDialog_;
+  CQPalettePreview *preview_ { nullptr };
+
+  QString primary_;
+  QString secondary_;
+  QString text_;
+
+  CQColorSetButton     *primaryButton_   { nullptr };
+  CQColorSetButton     *secondaryButton_ { nullptr };
+  CQColorSetButton     *textButton_      { nullptr };
+  CQColorPaletteDialog *primaryDialog_   { nullptr };
+  CQColorPaletteDialog *secondaryDialog_ { nullptr };
+  CQColorPaletteDialog *textDialog_      { nullptr };
 };
+
+//---
 
 class CQColorSetButton : public QPushButton {
  public:
